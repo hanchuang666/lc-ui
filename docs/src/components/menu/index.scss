@@ -1,0 +1,23 @@
+.lc-menu {
+  width: 200px;
+  padding: var(--lc-space-md);
+  border-right: var(--lc-border);
+
+  &__group {
+    margin-bottom: var(--lc-space-lg);
+  }
+
+  &__group-title {
+    margin-bottom: var(--lc-space-sm);
+    font-size: var(--lc-font-size-xs);
+    color: var(--lc-secondary-text-color);
+  }
+
+  &__menu-item {
+    cursor: pointer;
+  }
+
+  & li {
+    list-style: none;
+  }
+}

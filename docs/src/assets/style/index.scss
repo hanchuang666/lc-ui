@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  body,
+  #app {
+    height: 100%;
+  }
+}
+
+body {
+  font-family: -apple-system;
+  font-size: var(--lc-font-size-md);
+  color: var(--lc-primary-text-color);
+}
+
+// webkit内核滚动条全局样式处理
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+*::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(144, 147, 153, 0.3);
+  transition: background-color 0.3s;
+}
+
+a {
+  /*color: var(--d-primary);*/
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: initial;
+}
+
+.lc-doc {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    height: 50px;
+    display: flex;
+    background-color: #f9f9f9;
+    border-bottom: var(--lc-border);
+
+    &-left {
+      width: 200px;
+    }
+
+    &-center {
+      flex: 1;
+    }
+
+    &-right {
+      width: 200px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex: 1;
+  }
+
+  &__content {
+    flex: 1;
+  }
+}

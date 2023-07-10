@@ -1,0 +1,27 @@
+:root {
+  // 主题
+  --lc-primary: #1890ff;
+
+  // 字体
+  --lc-font-size-xs: 10px;
+  --lc-font-size-sm: 12px;
+  --lc-font-size-md: 14px;
+  --lc-font-size-lg: 16px;
+
+  --lc-title-color: rgba(0, 0, 0, .85);
+  --lc-primary-text-color: rgba(0, 0, 0, .85);
+  --lc-secondary-text-color: rgba(0, 0, 0, .45);
+  --lc-disable-color: rgba(0, 0, 0, .25);
+  --lc-placeholder-color: rgba(0, 0, 0, .25);
+
+  // 边框
+  --lc-border-color: #e5e5e5;
+  --lc-border: 1px solid var(--lc-border-color);
+
+  // 边距
+  --lc-base-space: 4px;
+  --lc-space-xs: calc(var(--lc-base-space) * 1);
+  --lc-space-sm: calc(var(--lc-base-space) * 2);
+  --lc-space-md: calc(var(--lc-base-space) * 3);
+  --lc-space-lg: calc(var(--lc-base-space) * 4);
+}
