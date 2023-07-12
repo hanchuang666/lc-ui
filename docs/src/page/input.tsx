@@ -1,4 +1,4 @@
-import {defineComponent} from "vue";
+import {defineComponent, ref} from "vue";
 import { Input } from 'lc-ui'
 
 
@@ -6,7 +6,15 @@ const Buttom = defineComponent({
   name: 'Buttom',
   setup: () => {
     return () => {
-      return <Input type="text" onInput={() => {console.log(3333)}} />
+      const value = ref('')
+      console.log(value);
+      return (
+        <Input
+          type="text"
+          value={value.value}
+          onInput={(value) => console.log('值变更了', value)}
+        />
+      )
     }
   }
 })

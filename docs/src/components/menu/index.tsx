@@ -11,12 +11,10 @@ export default defineComponent({
   setup() {
     const router = useRouter()
     const menus = getMenuList('component')
-    console.log(menus);
 
     const renderGroup = (group) => {
       return group?.children?.map(menu => (
         <li class={bem('menu-item')} onclick={() => {
-          console.log(111,menu.path);
           router.push(menu.path)
         }}>
           {menu.title}

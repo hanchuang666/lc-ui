@@ -1,8 +1,10 @@
 import {PREFIX} from "../constants";
 
 export function createBem(name: string) {
-  return (element: string) => {
-    return `${name}__${element}`
+  return (element: any) => {
+    if(typeof element === 'string') {
+      return `${name}__${element}`
+    }
   }
 }
 
