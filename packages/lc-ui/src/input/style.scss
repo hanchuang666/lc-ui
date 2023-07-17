@@ -1,0 +1,6 @@
+@import "../style/prefix.scss";
+
+.#{$prefix}-input {
+  font-size: var(--l-font-size-md);
+  padding: var(--l-space-xs) var(--l-space-sm);
+}

@@ -1,19 +1,17 @@
 <template>
-  <div class='input'>
-    <input
-        :value="value"
-        :type="type"
-        :name="name"
-        :disabled="disabled"
-        :readonly="readonly"
-        :autocomplete="autocomplete"
-        :autofocus="autofocus"
-        :class="classNames"
-        @input="handleInput"
-        @focus="handleFocus"
-        @blur="handleBlur"
-    />
-  </div>
+  <input
+    :value="value"
+    :type="type"
+    :name="name"
+    :disabled="disabled"
+    :readonly="readonly"
+    :autocomplete="autocomplete"
+    :autofocus="autofocus"
+    :class="classNames"
+    @input="handleInput"
+    @focus="handleFocus"
+    @blur="handleBlur"
+  />
 </template>
 
 
@@ -25,7 +23,7 @@ const [name, bem] = createClassName('input')
 
 export default defineComponent({
   name,
-  emits: ['onInput'],
+  emits: ['input', 'focus', 'blur'],
   props: INPUT_PROPS,
   setup(props, {emit}) {
     const classNames = bem({

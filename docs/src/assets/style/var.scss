@@ -1,27 +1,27 @@
 :root {
   // 主题
-  --lc-primary: #1890ff;
+  --l-primary: #1890ff;
 
   // 字体
-  --lc-font-size-xs: 10px;
-  --lc-font-size-sm: 12px;
-  --lc-font-size-md: 14px;
-  --lc-font-size-lg: 16px;
+  --l-font-size-xs: 10px;
+  --l-font-size-sm: 12px;
+  --l-font-size-md: 14px;
+  --l-font-size-lg: 16px;
 
-  --lc-title-color: rgba(0, 0, 0, .85);
-  --lc-primary-text-color: rgba(0, 0, 0, .85);
-  --lc-secondary-text-color: rgba(0, 0, 0, .45);
-  --lc-disable-color: rgba(0, 0, 0, .25);
-  --lc-placeholder-color: rgba(0, 0, 0, .25);
+  --l-title-color: rgba(0, 0, 0, .85);
+  --l-primary-text-color: rgba(0, 0, 0, .85);
+  --l-secondary-text-color: rgba(0, 0, 0, .45);
+  --l-disable-color: rgba(0, 0, 0, .25);
+  --l-placeholder-color: rgba(0, 0, 0, .25);
 
   // 边框
-  --lc-border-color: #e5e5e5;
-  --lc-border: 1px solid var(--lc-border-color);
+  --l-border-color: #e5e5e5;
+  --l-border: 1px solid var(--l-border-color);
 
   // 边距
-  --lc-base-space: 4px;
-  --lc-space-xs: calc(var(--lc-base-space) * 1);
-  --lc-space-sm: calc(var(--lc-base-space) * 2);
-  --lc-space-md: calc(var(--lc-base-space) * 3);
-  --lc-space-lg: calc(var(--lc-base-space) * 4);
+  --l-base-space: 4px;
+  --l-space-xs: calc(var(--l-base-space) * 1);
+  --l-space-sm: calc(var(--l-base-space) * 2);
+  --l-space-md: calc(var(--l-base-space) * 3);
+  --l-space-lg: calc(var(--l-base-space) * 4);
 }

@@ -1,4 +1,4 @@
-const PREFIX = `lc`
+const PREFIX = `l`
 
 type Modifier = string | {[key: string]: unknown}
 

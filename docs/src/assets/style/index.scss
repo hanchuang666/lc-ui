@@ -16,8 +16,8 @@ html {
 
 body {
   font-family: -apple-system;
-  font-size: var(--lc-font-size-md);
-  color: var(--lc-primary-text-color);
+  font-size: var(--l-font-size-md);
+  color: var(--l-primary-text-color);
 }
 
 // webkit内核滚动条全局样式处理
@@ -69,7 +69,7 @@ h6 {
     height: 50px;
     display: flex;
     background-color: #f9f9f9;
-    border-bottom: var(--lc-border);
+    border-bottom: var(--l-border);
 
     &-left {
       width: 200px;

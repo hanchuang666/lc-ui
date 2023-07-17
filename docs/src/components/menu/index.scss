@@ -1,16 +1,16 @@
 .lc-menu {
   width: 200px;
-  padding: var(--lc-space-md);
-  border-right: var(--lc-border);
+  padding: var(--l-space-md);
+  border-right: var(--l-border);
 
   &__group {
-    margin-bottom: var(--lc-space-lg);
+    margin-bottom: var(--l-space-lg);
   }
 
   &__group-title {
-    margin-bottom: var(--lc-space-sm);
-    font-size: var(--lc-font-size-xs);
-    color: var(--lc-secondary-text-color);
+    margin-bottom: var(--l-space-lg);
+    font-size: var(--l-font-size-xs);
+    color: var(--l-secondary-text-color);
   }
 
   &__menu-item {

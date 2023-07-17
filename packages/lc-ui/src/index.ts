@@ -1,3 +1,4 @@
-import { createApp } from 'vue'
+import './style/index.scss'
 export * from './component'
-export const abc = 2
+
+
