@@ -1,0 +1,12 @@
+@import "../style/prefix.scss";
+
+.#{$prefix}-radio {
+  input {
+    vertical-align: middle;
+  }
+
+  &__label {
+    padding-left: var(--l-space-sm);
+    padding-right: var(--l-space-sm);
+  }
+}

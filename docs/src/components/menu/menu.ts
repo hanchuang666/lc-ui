@@ -19,7 +19,7 @@ const menus = [
         id: 'layout',
         groupTitle: '布局组件',
         children: [
-          {id: 'Grid', path: '/component/grid', title: 'Grid [栅格]'}
+          {id: 'Grid', path: '/component/radio', title: 'Radio [单选框]'}
         ]
       }
     ]

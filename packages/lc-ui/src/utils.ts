@@ -1,3 +1,5 @@
+import { App, Plugin } from 'vue'
+
 const PREFIX = `l`
 
 type Modifier = string | {[key: string]: unknown}
@@ -39,4 +41,14 @@ export function createBem(name: string) {
 export function createClassName(name: string) {
   const blockName = `${PREFIX}-${name}`
   return [blockName, createBem(blockName)]
+}
+
+export function withInstall<T>(options: T) {
+  ;(options as Record<string, unknown>).install = (app: App) => {
+    const { name } = options as unknown as { name: string }
+    app.component(name, options as any)
+    // app.component(name, options as any)
+  }
+
+  return options as T & Plugin
 }
