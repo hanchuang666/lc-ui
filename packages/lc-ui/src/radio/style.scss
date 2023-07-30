@@ -1,8 +1,28 @@
 @import "../style/prefix.scss";
 
 .#{$prefix}-radio {
-  input {
+  cursor: pointer;
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--l-primary);
+    border-radius: 50%;
+    display: inline-block;
     vertical-align: middle;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      background-color: var(--l-primary);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   &__label {

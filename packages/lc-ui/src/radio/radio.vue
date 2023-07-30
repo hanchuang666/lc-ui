@@ -1,6 +1,6 @@
 <template>
   <div :class="wrapperClassName">
-    <input type="radio" />
+    <span :class="radioClassName" />
     <span v-if="label" :class="labelClassName">{{label}}</span>
   </div>
 </template>
@@ -16,8 +16,12 @@ export default defineComponent({
   props: RADIO_PROPS,
   setup() {
     const labelClassName = bem('label')
+    const radioClassName = bem('icon')
+
+
     return {
       wrapperClassName: name,
+      radioClassName,
       labelClassName,
     }
   }
