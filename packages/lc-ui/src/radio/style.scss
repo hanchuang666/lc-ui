@@ -2,31 +2,57 @@
 
 .#{$prefix}-radio {
   cursor: pointer;
+  margin-right: var(--l-space-sm);
+
+  &:last-child {
+    margin-right: 0;
+  }
 
   &__icon {
     width: 16px;
     height: 16px;
-    border: 1px solid var(--l-primary);
+    border: 1px solid var(--l-border-color);
     border-radius: 50%;
     display: inline-block;
     vertical-align: middle;
     position: relative;
 
-    &::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 10px;
-      height: 10px;
-      background-color: var(--l-primary);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
+    &--checked {
+      border: 1px solid var(--l-primary);
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 10px;
+        height: 10px;
+        background-color: var(--l-primary);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &--disabled {
+      color: var(--l-disable-color);
+      border: 1px solid var(--l-disable-color);
+      background-color: var(--l-disabled-back-color);
+      cursor: not-allowed;
+
+      &::after {
+        background-color: var(--l-disable-color);
+      }
+
+      +* {
+        color: var(--l-disable-color);
+        cursor: not-allowed;
+      }
     }
   }
 
   &__label {
     padding-left: var(--l-space-sm);
     padding-right: var(--l-space-sm);
+    vertical-align: middle;
   }
 }

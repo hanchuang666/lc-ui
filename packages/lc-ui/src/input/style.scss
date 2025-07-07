@@ -1,6 +1,81 @@
 @import "../style/prefix.scss";
 
 .#{$prefix}-input {
-  font-size: var(--l-font-size-md);
-  padding: var(--l-space-xs) var(--l-space-sm);
+  display: flex;
+  align-items: stretch;
+
+  &__wrap {
+    font-size: var(--l-font-size-md);
+    padding: var(--l-space-xs) var(--l-space-sm);
+    display: flex;
+    align-items: var(--l-align-center);
+    border: var(--l-border);
+    border-radius: var(--l-border-radius-sm);
+    transition: border-color 0.3s ease; // 添加过渡效果，让边框颜色变化更平滑
+    z-index: 1;
+
+    &--focused {
+      border-color: var(--l-primary);
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+    }
+
+    &--has-append {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &__prepend, &__append {
+    border: var(--l-border);
+    background-color: var(--l-bg-color-disabled);
+
+    &--wrap {
+      padding: 0 var(--l-space-sm);
+      display: inline-flex;
+      height: 100%;
+      align-items: var(--l-align-center);
+    }
+  }
+
+  &__prepend + &__wrap {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &__prepend {
+    margin-right: -1px;
+    border-radius: var(--l-border-radius-sm) 0 0 var(--l-border-radius-sm);
+  }
+
+  &__append {
+    margin-left: -1px;
+    border-radius: 0 var(--l-border-radius-sm) var(--l-border-radius-sm) 0;
+  }
+
+  &__prefix {
+    margin-right: var(--l-space-sm);
+  }
+
+  &__suffix {
+    margin-left: var(--l-space-sm);
+  }
+
+  &__inner {
+    border: none;
+    flex: 1;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      border: none;
+    }
+
+    &:disabled {
+      background: none;
+      cursor: not-allowed;
+    }
+  }
 }

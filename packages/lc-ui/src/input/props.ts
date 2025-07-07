@@ -7,17 +7,26 @@ export const INPUT_PROPS = {
     type: String as PropType<'text' | 'number' | 'password' | 'email' | 'url'>,
     default: 'text'
   },
-  value: {
+  modelValue: {
     type: [String, Number] as PropType<string | number | undefined>,
-    default: ''
+    default: '',
+    required: true
   },
   name: {
     type: String,
     default: ''
   },
+  maxlength: {
+    type: Number,
+    default: undefined
+  },
+  placeholder: {
+    type: String,
+    default: undefined
+  },
   autocomplete: {
-    type: Boolean,
-    default: false
+    type: String,
+    default: 'off'
   },
   autofocus: {
     type: Boolean,

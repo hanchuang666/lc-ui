@@ -3,8 +3,24 @@ import {ExtractPropTypes} from "vue";
 export type RadioProps = ExtractPropTypes<typeof RADIO_PROPS>
 
 export const RADIO_PROPS = {
-  label: {
-    type: String,
+  modelValue: {
+    type: [String, Number],
     default: ''
+  },
+  label: {
+    type: [String],
+    default: ''
+  },
+  value: {
+    type: [String, Number],
+    default: ''
+  },
+  readonly: {
+    type: Boolean,
+    default: false
+  },
+  disabled: {
+    type: Boolean,
+    default: false
   }
 }

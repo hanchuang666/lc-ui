@@ -9,6 +9,6 @@ export default LRadio
 
 declare module 'vue' {
   export interface GlobalComponents {
-    LRadio: typeof LRadio
+    LRadio: typeof Radio
   }
 }

@@ -11,7 +11,8 @@
   --l-title-color: rgba(0, 0, 0, .85);
   --l-primary-text-color: rgba(0, 0, 0, .85);
   --l-secondary-text-color: rgba(0, 0, 0, .45);
-  --l-disable-color: rgba(0, 0, 0, .25);
+  --l-color-disabled: rgba(0, 0, 0, .25);
+  --l-bg-color-disabled: rgb(243 243 243);
   --l-placeholder-color: rgba(0, 0, 0, .25);
 
   // 边框
@@ -24,4 +25,15 @@
   --l-space-sm: calc(var(--l-base-space) * 2);
   --l-space-md: calc(var(--l-base-space) * 3);
   --l-space-lg: calc(var(--l-base-space) * 4);
+
+  // 圆角
+  --l-border-radius-xs: 4px;
+  --l-border-radius-sm: 6px;
+  --l-border-radius-md: 8px;
+  --l-border-radius-lg: 10px;
+
+  // 对齐
+  --l-align-left: left;
+  --l-align-center: center;
+  --l-align-right: right;
 }
