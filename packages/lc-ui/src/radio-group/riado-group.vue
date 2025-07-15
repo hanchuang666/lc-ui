@@ -1,7 +1,7 @@
 <template>
     <div :class="wrapperClassName">
       <template v-if="options">
-        <LRadio
+        <l-radio
             v-for="(option, index) in options"
             :key="option.value || index"
             :label="option.label"
@@ -16,16 +16,12 @@
 import {defineComponent, provide, ref, watch, computed} from 'vue';
 import {createClassName} from "../utils";
 import {RADIO_GROUP_PROPS} from "./props";
-import LRadio from '../radio'
 import {RADIO_GROUP_CONTEXT} from "../context/radio-group-context.ts";
 // import useModelValue from "../hooks/use-model-value.ts";
 
 const [name, bem] = createClassName('radio-group')
 export default defineComponent({
   name: name as string,
-  components: {
-    LRadio
-  },
   props: RADIO_GROUP_PROPS,
   emits: ['update:modelValue', 'change'],
   setup(props, { emit }) {

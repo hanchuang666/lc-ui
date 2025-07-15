@@ -1,10 +1,12 @@
 @import "../style/prefix.scss";
 
 .#{$prefix}-input {
+  width: 100%;
   display: flex;
   align-items: stretch;
 
   &__wrap {
+    flex: 1;
     font-size: var(--l-font-size-md);
     padding: var(--l-space-xs) var(--l-space-sm);
     display: flex;
@@ -14,12 +16,17 @@
     transition: border-color 0.3s ease; // 添加过渡效果，让边框颜色变化更平滑
     z-index: 1;
 
-    &--focused {
+    &--focused,
+    &:hover {
       border-color: var(--l-primary);
     }
 
     &--disabled {
       cursor: not-allowed;
+    }
+
+    &--disabled:hover {
+      border-color: var(--l-border-color);
     }
 
     &--has-append {

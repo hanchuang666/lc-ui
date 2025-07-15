@@ -21,6 +21,20 @@ const menus = [
         children: [
           {id: 'Grid', path: '/component/radio', title: 'Radio [单选框]'}
         ]
+      },
+      {
+        id: 'layout',
+        groupTitle: '布局组件',
+        children: [
+          {id: 'Grid', path: '/component/select', title: 'Select [下拉框]'}
+        ]
+      },
+      {
+        id: 'layout',
+        groupTitle: '布局组件',
+        children: [
+          {id: 'Grid', path: '/component/popup', title: 'Popup [弹出层]'}
+        ]
       }
     ]
   }

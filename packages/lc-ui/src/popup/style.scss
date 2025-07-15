@@ -1,0 +1,33 @@
+@import "../style/prefix.scss";
+
+.#{$prefix}-popup {
+  opacity: 0;
+  transition: opacity .2s linear;
+}
+
+.#{$prefix}-popup__active {
+  opacity: 1;
+ }
+
+.#{$prefix}-popup__wrap {
+  background: var(--l-bg-color-container);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  border-radius: var(--l-border-radius-sm);
+  padding: var(--l-space-xs) var(--l-space-sm);
+}
+
+[data-popup-placement="top"] {
+  margin-bottom: var(--l-space-sm);
+}
+
+[data-popup-placement="bottom"] {
+  margin-top: var(--l-space-sm);
+}
+
+[data-popup-placement="left"] {
+  margin-right: var(--l-space-sm);
+}
+
+[data-popup-placement="right"] {
+  margin-left: var(--l-space-sm);
+}

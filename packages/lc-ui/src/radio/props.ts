@@ -8,7 +8,7 @@ export const RADIO_PROPS = {
     default: ''
   },
   label: {
-    type: [String],
+    type: [String, Number],
     default: ''
   },
   value: {
