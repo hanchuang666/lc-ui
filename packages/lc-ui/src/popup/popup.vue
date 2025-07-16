@@ -2,20 +2,22 @@
   <div ref="containerRef" @mouseenter="mouseenter" @mouseleave="mouseleave">
     <slot />
   </div>
-
-  <div ref="contentRef" :class="{[name]: true, [bem('active')]: visible}">
-    <div
-        v-show="visible"
-        :class="wrapperClassName"
-        :style="innerStyle"
-        :data-popup-placement="placement"
-    >
-      <slot name="content" />
-    </div>
-  </div>
+  <Teleport :to="teleport" v-if="isLoaded">
+    <Transition name="l-popup">
+      <div v-show="visible" ref="contentRef" :class="name">
+        <div
+            :class="bem('wrap')"
+            :style="innerStyle"
+            :data-popup-placement="placement"
+        >
+          <slot name="content" />
+        </div>
+      </div>
+    </Transition>
+  </Teleport>
 </template>
 <script lang="ts">
-import { defineComponent, computed, ref, watch, onMounted, onUnmounted, nextTick } from "vue";
+import { defineComponent, ref, watch, onMounted, nextTick } from "vue";
 import { createClassName } from "../utils";
 import { POPUP_PROPS } from "./props";
 
@@ -26,18 +28,10 @@ export default defineComponent({
   emits: ["update:modelValue", "change"],
   props: POPUP_PROPS,
   setup(props, {emit}) {
-    const wrapperClassName = computed(() => bem("wrap", {
-      // focused: focused.value,
-      // "has-append": hasAppendSlot.value,
-    }));
-
-    const visible = ref(props.visible)
-
     const contentRef = ref<HTMLElement | null>(null);
     const containerRef = ref<HTMLElement | null>(null);
-    const container = document.createElement("div");
-
-
+    const visible = ref(props.visible)
+    const isLoaded = ref(props.visible ? true : !props.lazyRender)
     const innerStyle = ref({});
 
     const updatePosition = () => {
@@ -65,13 +59,11 @@ export default defineComponent({
         }
 
         innerStyle.value = {
-          position: 'absolute',
           transform: `translate3d(${left < 0 ? 0 : left}px, ${top}px, 0px)`,
           ...props?.overlayInnerStyle
         }
       }
     };
-    watch(() => containerRef.value, updatePosition);
 
     const mouseenter = async () => {
       visible.value = true;
@@ -84,27 +76,27 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      document.body.appendChild(container);
-      if (contentRef.value && container) {
-        // 将组件元素添加到目标 div 中
-        container.style.cssText = 'position: absolute; top: 0px; left: 0px; width: 100%';
-        container.appendChild(contentRef.value);
-      }
       updatePosition();
       window.addEventListener('resize', updatePosition);
     })
 
-    onUnmounted(() => {
-      document.body.removeChild(container);
-    })
+    watch(() => containerRef.value, updatePosition);
+    watch(
+        () => visible.value,
+        (visible) => {
+          if (visible) {
+            isLoaded.value = true
+          }
+        }
+    )
 
     return {
       name,
-      wrapperClassName,
       bem,
       contentRef,
       containerRef,
       visible,
+      isLoaded,
       innerStyle,
       mouseenter,
       mouseleave

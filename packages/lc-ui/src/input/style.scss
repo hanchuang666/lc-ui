@@ -14,7 +14,6 @@
     border: var(--l-border);
     border-radius: var(--l-border-radius-sm);
     transition: border-color 0.3s ease; // 添加过渡效果，让边框颜色变化更平滑
-    z-index: 1;
 
     &--focused,
     &:hover {
@@ -53,12 +52,12 @@
   }
 
   &__prepend {
-    margin-right: -1px;
+    border-right: 0;
     border-radius: var(--l-border-radius-sm) 0 0 var(--l-border-radius-sm);
   }
 
   &__append {
-    margin-left: -1px;
+    border-left: 0;
     border-radius: 0 var(--l-border-radius-sm) var(--l-border-radius-sm) 0;
   }
 

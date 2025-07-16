@@ -13,5 +13,13 @@ export const POPUP_PROPS = {
   overlayInnerStyle: {
     type: Object,
     default: undefined
+  },
+  lazyRender: {
+    type: Boolean,
+    default: true
+  },
+  teleport: {
+    type: [String, Object],
+    default: 'body'
   }
 }

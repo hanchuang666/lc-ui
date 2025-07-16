@@ -1,19 +1,29 @@
 @import "../style/prefix.scss";
 
 .#{$prefix}-popup {
-  opacity: 0;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.l-popup-enter-active,
+.l-popup-leave-active {
   transition: opacity .2s linear;
 }
 
-.#{$prefix}-popup__active {
-  opacity: 1;
- }
+.l-popup-enter-from,
+.l-popup-leave-to {
+  opacity: 0;
+}
 
 .#{$prefix}-popup__wrap {
+  position: absolute;
   background: var(--l-bg-color-container);
   box-shadow: 0 5px 10px rgba(0,0,0,.2);
   border-radius: var(--l-border-radius-sm);
   padding: var(--l-space-xs) var(--l-space-sm);
+  z-index: 999;
 }
 
 [data-popup-placement="top"] {
